@@ -1,11 +1,9 @@
 import React from 'react'
 import '../components/Navbar.jsx';
-import Navbar from '../components/Navbar.jsx';
 
 const Home = () => {
   return (
     <>
-    <Navbar />
     <div class="flex items-center justify-center h-full text-center">
         <div class="flex flex-col items-center mt-20">
         <h1 class="text-[#A78BFA] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold mt-[10vh] mx-1">Qozfa Hussain</h1>
