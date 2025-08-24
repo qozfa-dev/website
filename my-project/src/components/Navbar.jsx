@@ -6,7 +6,6 @@ const Navbar = () => {
     <ul className="flex space-x-9">
       <li><a href="#Home">Home</a></li>
       <li><a href="#About">About Me</a></li>
-      <li><a href="#Experience">Experience</a></li>
       <li><a href="#Projects">Projects</a></li>
       <li><a href="#Contact">Contact</a></li>
     </ul>
