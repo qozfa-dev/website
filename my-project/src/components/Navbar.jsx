@@ -22,20 +22,30 @@ const Navbar = () => {
       <nav className="md:hidden text-[#FFFFFF] bg-[#0D1117] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 m-2 sticky top-2 right-2 ml-auto w-fit">
         <div className="flex justify-between items-center">
           <h1 className="text-lg font-bold text-[#A78BFA]"></h1>
-          <button onClick={() => setIsOpen(!isOpen)} className="text-[#A78BFA]">
+          <button onClick={() => setIsOpen(!isOpen)} className="text-[#A78BFA] cursor-pointer">
             {isOpen ? <FaTimes size={22} /> : <GiHamburgerMenu size={22} />}
           </button>
         </div>
 
-
+        {/* Dropdown Links */}
+        {isOpen && (
+          <nav>
+            <ul>
+              <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Home" onClick={() => setIsOpen(false)}>Home</a></li>
+              <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#About" onClick={() => setIsOpen(false)}>About Me</a></li>
+              <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Projects" onClick={() => setIsOpen(false)}>Projects</a></li>
+              <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Contact" onClick={() => setIsOpen(false)}>Contact</a></li>
+            </ul>
+            </nav>
+        )}
+      </nav>
       
 
 
-      </nav>
 
         </>
 
-  )
-}
+  );
+};
 
 export default Navbar;
