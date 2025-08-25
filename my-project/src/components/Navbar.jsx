@@ -1,15 +1,40 @@
 import React from 'react'
+import { useState } from 'react';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="text-[#FFFFFF] bg-[#0D1117] flex justify-end items-center py-2 px-4 m-2 border-2 border-[#A78BFA] rounded-2xl w-fit sticky top-2 right-2 ml-auto">
+
+    <>
+
+    <nav className="hidden md:block text-[#FFFFFF] bg-[#0D1117] justify-end items-center py-2 px-4 m-2 border-2 border-[#A78BFA] rounded-2xl w-fit sticky top-2 right-2 ml-auto">
     <ul className="flex space-x-9">
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Home">Home</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#About">About Me</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Projects">Projects</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Contact">Contact</a></li>
     </ul>
-    </div>
+    </nav>
+
+    {/* Mobile Navbar */}
+      <nav className="md:hidden text-[#FFFFFF] bg-[#0D1117] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 m-2 sticky top-2 right-2 ml-auto w-fit">
+        <div className="flex justify-between items-center">
+          <h1 className="text-lg font-bold text-[#A78BFA]"></h1>
+          <button onClick={() => setIsOpen(!isOpen)} className="text-[#A78BFA]">
+            {isOpen ? <FaTimes size={22} /> : <GiHamburgerMenu size={22} />}
+          </button>
+        </div>
+
+
+      
+
+
+      </nav>
+
+        </>
+
   )
 }
 
