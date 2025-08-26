@@ -19,8 +19,12 @@ const Navbar = () => {
     </nav>
 
     {/* Mobile Navbar */}
-      <nav className="md:hidden text-[#FFFFFF] bg-[#0D1117] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 m-2 sticky top-2 right-2 ml-auto w-fit">
-        <div className="flex justify-between items-center">
+      <nav className={`md:hidden text-[#FFFFFF] bg-[#0D1117] hover:bg-[#1f2835] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 sticky top-2 ${
+        isOpen 
+        ? 'mx-0 w-full box-border' // Full width when open
+        : 'm-2 ml-auto w-fit' // Compact with margins when closed
+}`}>
+        <div className="flex justify-between">
           <h1 className="text-lg font-bold text-[#A78BFA]"></h1>
           <button onClick={() => setIsOpen(!isOpen)} className="text-[#A78BFA] cursor-pointer">
             {isOpen ? <FaTimes size={22} /> : <GiHamburgerMenu size={22} />}
@@ -39,9 +43,6 @@ const Navbar = () => {
             </nav>
         )}
       </nav>
-      
-
-
 
         </>
 
