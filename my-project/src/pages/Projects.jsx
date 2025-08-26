@@ -2,9 +2,9 @@ import React from 'react'
 
 const Projects = () => {
   return (
-    <section id="Projects" className="h-screen">
+    <section id="Projects" className="min-h-screen pb-20">
       <div className="px-10 py-15 mt-20">
-      <h2 className="text-[#A78BFA] text-3xl sm:text-5xl md:text-6xl lg:text-6xl font-sans font-bold mt-5 pt-5">Projects</h2>
+      <h2 className="text-[#A78BFA] text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-sans font-bold mt-5 pt-5">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-20">
 
         <div className="bg-[#1F2937] justify-center items-center rounded-2xl cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out m-5 flex flex-col">
