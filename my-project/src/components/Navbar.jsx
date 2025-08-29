@@ -9,7 +9,7 @@ const Navbar = () => {
 
     <>
 
-    <nav className="hidden md:block text-[#FFFFFF] bg-[#0D1117] justify-end items-center py-2 px-4 m-2 border-2 border-[#A78BFA] rounded-2xl w-fit sticky top-2 right-2 ml-auto">
+    <nav className="hidden md:block text-[#000000] dark:text-[#FFFFFF] bg-[#FFF8F0] dark:bg-[#0D1117] justify-end items-center py-2 px-4 m-2 border-2 border-[#A78BFA] rounded-2xl w-fit sticky top-2 right-2 ml-auto">
     <ul className="flex space-x-9">
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Home">Home</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#About">About Me</a></li>
@@ -19,7 +19,7 @@ const Navbar = () => {
     </nav>
 
     {/* Mobile Navbar */}
-      <nav className={`md:hidden text-[#FFFFFF] bg-[#0D1117] hover:bg-[#1f2835] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 sticky top-2 ${
+      <nav className={`md:hidden text-[#000000] dark:text-[#FFFFFF] bg-[#FFF8F0] dark:bg-[#0D1117] hover:bg-[#FFEBD1] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 sticky top-2 ${
         isOpen 
         ? 'mx-0 w-full box-border' // Full width when open
         : 'm-2 ml-auto w-fit' // Compact with margins when closed
