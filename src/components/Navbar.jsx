@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ( {theme, setTheme} ) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
 
@@ -16,6 +16,12 @@ const Navbar = () => {
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Projects">Projects</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Contact">Contact</a></li>
     </ul>
+    <button
+          onClick={() => setTheme(!theme)}
+          className="ml-4 px-3 py-1 bg-[#A78BFA] text-white rounded-lg hover:bg-[#7C3AED] transition-colors"
+        >
+          {theme ? "Light Mode" : "Dark Mode"}
+        </button>
     </nav>
 
     {/* Mobile Navbar */}

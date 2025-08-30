@@ -1,4 +1,4 @@
-import './pages/Home.jsx';
+import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
@@ -6,29 +6,49 @@ import Projects from './pages/Projects.jsx';
 import Contact from './pages/Contact.jsx';
 
 export const App = () => {
-  const [theme, setTheme] = useState('dark');
-  
+
+  const [darkMode, setDarkMode] = useState(() =>
+      localStorage.getItem("theme") === "dark"
+  );
+
   useEffect(() => {
-    if (theme === "dark") {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
+    const root = document.documentElement;
+
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
     } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
     }
-  }, [theme]);
+  }, [darkMode]);
+
+  
+
+
+  // const [theme, setTheme] = useState('dark');
+  
+  // useEffect(() => {
+  //   if (theme === "dark") {
+  //     document.documentElement.classList.add("dark");
+  //     localStorage.theme = "dark";
+  //   } else {
+  //     document.documentElement.classList.remove("dark");
+  //     localStorage.theme = "light";
+  //   }
+  // }, [theme]);
 
 
   return (
     <div className="scroll-smooth bg-[#FFF8F0] dark:bg-[#111827] transition-colors">
-    <Navbar theme={theme} setTheme={setTheme}/>
+    <Navbar theme={darkMode} setTheme={setDarkMode}/>
     <Home />
     <About />
     <Projects />
     <Contact />
     </div>
-  )
-}
+  );
+};
 
 export default App;
 
