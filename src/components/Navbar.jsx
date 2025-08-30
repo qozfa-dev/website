@@ -15,10 +15,11 @@ const Navbar = ( {theme, setTheme} ) => {
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Projects">Projects</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Contact">Contact</a></li>
       <button
-          onClick={() => setTheme(!theme)}
-          className="ml-4 px-3 py-1 bg-[#A78BFA] text-white rounded-lg hover:bg-[#7C3AED] transition-colors"
-        >
-          {theme ? "Light Mode" : "Dark Mode"}
+          onClick={() => setTheme(!theme)} className="hover:cursor-pointer">
+            <img
+              src={theme ? "/sun (2).svg" : "/moon.svg"}
+              alt={theme ? "Light Mode" : "Dark Mode"}
+              className="w-5 h-5"/>
         </button>
     </ul>
     </nav>
