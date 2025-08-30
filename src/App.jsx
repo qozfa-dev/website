@@ -23,23 +23,9 @@ export const App = () => {
     }
   }, [darkMode]);
 
-  
-
-
-  // const [theme, setTheme] = useState('dark');
-  
-  // useEffect(() => {
-  //   if (theme === "dark") {
-  //     document.documentElement.classList.add("dark");
-  //     localStorage.theme = "dark";
-  //   } else {
-  //     document.documentElement.classList.remove("dark");
-  //     localStorage.theme = "light";
-  //   }
-  // }, [theme]);
-
 
   return (
+    <body className="bg-[#FFF8F0] dark:bg-[#111827]">
     <div className="scroll-smooth bg-[#FFF8F0] dark:bg-[#111827] transition-colors">
     <Navbar theme={darkMode} setTheme={setDarkMode}/>
     <Home />
@@ -47,6 +33,7 @@ export const App = () => {
     <Projects />
     <Contact />
     </div>
+    </body>
   );
 };
 

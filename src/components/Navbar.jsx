@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState } from 'react';
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
@@ -15,20 +14,20 @@ const Navbar = ( {theme, setTheme} ) => {
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#About">About Me</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Projects">Projects</a></li>
       <li className="hover:underline decoration-[#A78BFA] underline-offset-4 decoration-2"><a href="#Contact">Contact</a></li>
-    </ul>
-    <button
+      <button
           onClick={() => setTheme(!theme)}
           className="ml-4 px-3 py-1 bg-[#A78BFA] text-white rounded-lg hover:bg-[#7C3AED] transition-colors"
         >
           {theme ? "Light Mode" : "Dark Mode"}
         </button>
+    </ul>
     </nav>
 
     {/* Mobile Navbar */}
       <nav className={`md:hidden text-[#000000] dark:text-[#FFFFFF] bg-[#FFF8F0] dark:bg-[#0D1117] hover:bg-[#FFEBD1] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 sticky top-2 ${
         isOpen 
-        ? 'mx-0 w-full box-border' // Full width when open
-        : 'm-2 ml-auto w-fit' // Compact with margins when closed
+        ? 'mx-0 w-full box-border'
+        : 'm-2 ml-auto w-fit' 
 }`}>
         <div className="flex justify-between">
           <h1 className="text-lg font-bold text-[#A78BFA]"></h1>
