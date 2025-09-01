@@ -25,7 +25,7 @@ const Navbar = ( {theme, setTheme} ) => {
     </nav>
 
     {/* Mobile Navbar */}
-      <nav className={`md:hidden text-[#000000] dark:text-[#FFFFFF] bg-[#FFF8F0] dark:bg-[#0D1117] hover:bg-[#FFEBD1] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 sticky top-2 ${
+      <nav className={`md:hidden text-[#000000] dark:text-[#FFFFFF] bg-[#FFF8F0] dark:bg-[#0D1117] hover:bg-[#FFEBD1] dark:hover:bg-[#161B28] border-2 border-[#A78BFA] rounded-2xl py-2 px-4 sticky top-2 ${
         isOpen 
         ? 'mx-0 w-full box-border'
         : 'm-2 ml-auto w-fit' 
