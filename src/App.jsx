@@ -1,8 +1,10 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import Navbar from './components/Navbar.jsx';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Projects from './pages/Projects.jsx';
+import ProjectDetail from './pages/ProjectDetail.jsx';
 import Contact from './pages/Contact.jsx';
 
 export const App = () => {
@@ -25,15 +27,22 @@ export const App = () => {
 
 
   return (
-    <body className="bg-[#FFF8F0] dark:bg-[#111827]">
+    <BrowserRouter>
+    <div className="bg-[#FFF8F0] dark:bg-[#111827]">
     <div className="scroll-smooth bg-[#FFF8F0] dark:bg-[#111827] transition-colors">
     <Navbar theme={darkMode} setTheme={setDarkMode}/>
-    <Home />
-    <About />
-    <Projects />
-    <Contact />
+    <Routes>
+      <Route path="/" element={<>
+      <Home />
+      <About />
+      <Projects />
+      <Contact />
+      </>} />
+      <Route path="/projects/:slug" element={<ProjectDetail />} />
+    </Routes>
     </div>
-    </body>
+    </div>
+    </BrowserRouter>
   );
 };
 
